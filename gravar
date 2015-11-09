@@ -1,0 +1,9 @@
+#!/bin/sh
+alteracao=`date +"%Y-%m-%d %H:%M"`
+echo "Alteração em $alteracao"
+modificados=`git status | grep modificado | awk -F: '{print $2}'`
+for f in $modificados; do
+  git add $f
+done
+git commit -m "Alteração em $alteracao"
+git push
