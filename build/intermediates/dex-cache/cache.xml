@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Rafael\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-a15ce92e1cf672cf9098ffe0ab865a91c30f52c1.jar" />
-    </item>
-    <item
-        jar="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jar="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\pre-dexed\debug\classes-e964214dbf65fce59ef0b1765f7a138186eb97c1.jar" />
+        <dex dex="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\pre-dexed\debug\classes-73cfba247307cd64af990682b22d14feee1ca2a7.jar" />
     </item>
     <item
-        jar="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jar="C:\Users\Leandro\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\pre-dexed\debug\classes-67cc4621e2059616f4105059786af7adbd86bf8d.jar" />
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-a898333ea60e1eca7cd5c12be3501162c0843d37.jar" />
     </item>
     <item
-        jar="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jar="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="C:\Users\Rafael\Downloads\9group-master\9group-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-6acff95ff1677224506eb069fd3315c6e56b77be.jar" />
+        <dex dex="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-fd052233cac0b5bf927d00017e2046238bad7bdb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Leandro\AndroidStudioProjects\NineGameRafael\app\build\intermediates\pre-dexed\debug\classes-c020b69b2598371d7550137010f5975f180e7cee.jar" />
     </item>
 
 </items>

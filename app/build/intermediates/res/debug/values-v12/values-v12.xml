@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/Rafael/Downloads/9group-master/9group-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values-v12/values.xml -->
+    <!-- From: file:/C:/Users/Leandro/AndroidStudioProjects/NineGameRafael/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/res/values-v12/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="Platform.V12.AppCompat"/>
     <style name="Platform.AppCompat.Light" parent="Platform.V12.AppCompat.Light"/>
