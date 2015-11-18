@@ -1509,10 +1509,11 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
         public static final int backrepeat=0x7f02003b;
-        public static final int padrao=0x7f02003c;
-        public static final int pergunta_atual=0x7f02003d;
-        public static final int pergunta_futura=0x7f02003e;
-        public static final int pergunta_passada=0x7f02003f;
+        public static final int logo=0x7f02003c;
+        public static final int padrao=0x7f02003d;
+        public static final int pergunta_atual=0x7f02003e;
+        public static final int pergunta_futura=0x7f02003f;
+        public static final int pergunta_passada=0x7f020040;
     }
     public static final class id {
         public static final int action_bar=0x7f0c0040;
