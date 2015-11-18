@@ -28,8 +28,14 @@ public class MainActivity extends Activity {
     protected void posicionarLogo(){
         RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
         ImageView logo = new ImageView(this);
-        logo.setX(30);
-        logo.setY(30);
+        logo.setX(170);
+        logo.setY(40);
+
+        int tamanho = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
+        int altura = (int) (tamanho * 0.4345f);
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(tamanho, altura);
+        logo.setLayoutParams(parms);
+
         logo.setImageResource(R.drawable.logo);
         rl.addView(logo);
     }
@@ -39,7 +45,7 @@ public class MainActivity extends Activity {
         float linha[] = new float[6];
         float coluna[] = new float[3];
 
-        float margem_esquerda = 0.15f;
+        float margem_esquerda = 0.19f;
         float margem_cima = 0.2f;
 
         int tamanho_casa = 75;
