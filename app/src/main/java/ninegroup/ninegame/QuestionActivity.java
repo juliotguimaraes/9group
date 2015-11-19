@@ -1,11 +1,13 @@
 package ninegroup.ninegame;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionActivity extends Activity {
@@ -45,6 +47,13 @@ public class QuestionActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RadioGroup rg = (RadioGroup)findViewById(R.id.RadioGroup);
+                if(rg.getCheckedRadioButtonId() == R.id.radioButton4) {
+                    setResult(Activity.RESULT_OK);
+                }
+                else {
+                    setResult(Activity.RESULT_CANCELED);
+                }
                 finish();
             }
         });

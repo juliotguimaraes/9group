@@ -16,6 +16,10 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends Activity {
 
+    static int casaAtual = 0;
+    static boolean[] casasPassadas = new boolean[14];
+    private CasaView[] casasView = new CasaView[14];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Point size = new Point();
@@ -24,6 +28,18 @@ public class MainActivity extends Activity {
         getWindowManager().getDefaultDisplay().getSize(size);
         posicionarLogo();
         montarTabuleiro(size.x, size.y);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == Activity.RESULT_OK) {
+            casasPassadas[requestCode] = true;
+            casaAtual++;
+            casasView[requestCode].trocarImagem(R.drawable.pergunta_passada);
+            if(requestCode + 1 < casasView.length) {
+                casasView[requestCode + 1].trocarImagem(R.drawable.pergunta_atual);
+            }
+        }
     }
 
     protected void posicionarLogo(){
@@ -71,49 +87,46 @@ public class MainActivity extends Activity {
         coluna[1] = (tamanho_coluna * 1) + margem_esquerda;
         coluna[2] = (tamanho_coluna * 2) + margem_esquerda;
 
-        CasaView casa_1 = new CasaView(this, linha[0]*height, coluna[0]*width, tamanho_casa);
-        CasaView casa_2 = new CasaView(this, linha[1]*height, coluna[0]*width, tamanho_casa);
-        CasaView casa_3 = new CasaView(this, linha[2]*height, coluna[0]*width, tamanho_casa);
-        CasaView casa_4 = new CasaView(this, linha[5]*height, coluna[0]*width, tamanho_casa);
-        CasaView casa_5 = new CasaView(this, linha[0]*height, coluna[1]*width, tamanho_casa);
-        CasaView casa_6 = new CasaView(this, linha[2]*height, coluna[1]*width, tamanho_casa);
-        CasaView casa_7 = new CasaView(this, linha[5]*height, coluna[1]*width, tamanho_casa);
-        CasaView casa_8 = new CasaView(this, linha[0]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_9 = new CasaView(this, linha[1]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_10 = new CasaView(this, linha[2]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_11 = new CasaView(this, linha[3]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_12 = new CasaView(this, linha[4]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_13 = new CasaView(this, linha[5]*height, coluna[2]*width, tamanho_casa);
-        CasaView casa_14 = new CasaView(this, linha[4]*height, coluna[0]*width, tamanho_casa);
+        casasView[10] = new CasaView(this, linha[0]*height, coluna[0]*width, tamanho_casa, 10);
+        casasView[11] = new CasaView(this, linha[1]*height, coluna[0]*width, tamanho_casa, 11);
+        casasView[12] = new CasaView(this, linha[2]*height, coluna[0]*width, tamanho_casa, 12);
+        casasView[1] = new CasaView(this, linha[5]*height, coluna[0]*width, tamanho_casa, 1);
+        casasView[9] = new CasaView(this, linha[0]*height, coluna[1]*width, tamanho_casa, 9);
+        casasView[13] = new CasaView(this, linha[2]*height, coluna[1]*width, tamanho_casa, 13);
+        casasView[2] = new CasaView(this, linha[5]*height, coluna[1]*width, tamanho_casa, 2);
+        casasView[8] = new CasaView(this, linha[0]*height, coluna[2]*width, tamanho_casa, 8);
+        casasView[7] = new CasaView(this, linha[1]*height, coluna[2]*width, tamanho_casa, 7);
+        casasView[6] = new CasaView(this, linha[2]*height, coluna[2]*width, tamanho_casa, 6);
+        casasView[5] = new CasaView(this, linha[3]*height, coluna[2]*width, tamanho_casa, 5);
+        casasView[4] = new CasaView(this, linha[4]*height, coluna[2]*width, tamanho_casa, 4);
+        casasView[3] = new CasaView(this, linha[5]*height, coluna[2]*width, tamanho_casa, 3);
+        casasView[0] = new CasaView(this, linha[4]*height, coluna[0]*width, tamanho_casa, 0);
 
-        rl.addView(casa_1);
-        rl.addView(casa_2);
-        rl.addView(casa_3);
-        rl.addView(casa_4);
-        rl.addView(casa_5);
-        rl.addView(casa_6);
-        rl.addView(casa_7);
-        rl.addView(casa_8);
-        rl.addView(casa_9);
-        rl.addView(casa_10);
-        rl.addView(casa_11);
-        rl.addView(casa_12);
-        rl.addView(casa_13);
-        rl.addView(casa_14);
+        for(CasaView cv : casasView) {
+            rl.addView(cv);
+        }
     }
 
 }
 
 class CasaView extends ImageView {
 
-    public CasaView(Context context, float posicaoY, float posicaoX, int tamanho_casa){
+    private final int id;
+
+    public CasaView(Context context, float posicaoY, float posicaoX, int tamanhoCasa, int id) {
         super(context);
         this.setX(posicaoX);
         this.setY(posicaoY);
         this.setClickable(true);
-        this.setImageResource(R.drawable.pergunta_futura);
+        if(id != 0) {
+            this.setImageResource(R.drawable.pergunta_futura);
+        }
+        else {
+            this.setImageResource(R.drawable.pergunta_atual);
+        }
+        this.id = id;
 
-        int tamanho = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, tamanho_casa, getResources().getDisplayMetrics());
+        int tamanho = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, tamanhoCasa, getResources().getDisplayMetrics());
 
         LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(tamanho, tamanho);
         this.setLayoutParams(parms);
@@ -121,15 +134,28 @@ class CasaView extends ImageView {
         this.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!verificaCasa()) {
+                    return;
+                }
                 Intent intent = new Intent(v.getContext(), QuestionActivity.class);
-                v.getContext().startActivity(intent);
-
-                trocarImagem();
+                //v.getContext().startActivity(intent);
+                ((Activity)v.getContext()).startActivityForResult(intent, getID());
             }
         });
     }
 
-    public void trocarImagem() {
-        this.setImageResource(R.drawable.pergunta_atual);
+    private int getID() {
+        return id;
+    }
+
+    private boolean verificaCasa() {
+        if(id == MainActivity.casaAtual) {
+            return true;
+        }
+        return false;
+    }
+
+    public void trocarImagem(int imageId) {
+        this.setImageResource(imageId);
     }
 }

@@ -28,7 +28,8 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:id="@+id/RadioGroup">
 
                 <RadioButton
                     android:layout_width="wrap_content"
