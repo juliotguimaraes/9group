@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
@@ -28,12 +29,19 @@ public class MainActivity extends Activity {
     protected void posicionarLogo(){
         RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
         ImageView logo = new ImageView(this);
-        logo.setX(170);
-        logo.setY(40);
 
-        int tamanho = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200, getResources().getDisplayMetrics());
-        int altura = (int) (tamanho * 0.4345f);
-        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(tamanho, altura);
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int largura_tela = display.widthPixels;
+
+        float proporcao_tela = 0.5f;
+        int largura = (int)(largura_tela * proporcao_tela);
+        int altura = (int) (largura_tela * 0.4345f);
+
+        int esquerda = (largura_tela - largura) / 2;
+        logo.setX(esquerda);
+        logo.setY(0);
+
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
         logo.setLayoutParams(parms);
 
         logo.setImageResource(R.drawable.logo);
