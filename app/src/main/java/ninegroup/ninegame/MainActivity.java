@@ -111,7 +111,7 @@ class CasaView extends ImageView {
         this.setX(posicaoX);
         this.setY(posicaoY);
         this.setClickable(true);
-        this.setImageResource(R.drawable.pergunta_atual);
+        this.setImageResource(R.drawable.pergunta_futura);
 
         int tamanho = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, tamanho_casa, getResources().getDisplayMetrics());
 
@@ -130,6 +130,6 @@ class CasaView extends ImageView {
     }
 
     public void trocarImagem() {
-        this.setImageResource(R.drawable.pergunta_futura);
+        this.setImageResource(R.drawable.pergunta_atual);
     }
 }
