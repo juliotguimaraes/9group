@@ -409,6 +409,7 @@ int drawable padrao 0x7f02003d
 int drawable pergunta_atual 0x7f02003e
 int drawable pergunta_futura 0x7f02003f
 int drawable pergunta_passada 0x7f020040
+int id RadioGroup 0x7f0c0051
 int id action_bar 0x7f0c0040
 int id action_bar_activity_content 0x7f0c0000
 int id action_bar_container 0x7f0c003f
@@ -427,7 +428,7 @@ int id alertTitle 0x7f0c0030
 int id always 0x7f0c0016
 int id beginning 0x7f0c0013
 int id buttonPanel 0x7f0c0036
-int id buttonResponder 0x7f0c0056
+int id buttonResponder 0x7f0c0057
 int id checkbox 0x7f0c0038
 int id collapseActionView 0x7f0c0017
 int id contentPanel 0x7f0c0031
@@ -460,11 +461,11 @@ int id progress_circular 0x7f0c0005
 int id progress_horizontal 0x7f0c0006
 int id question 0x7f0c0050
 int id radio 0x7f0c003a
-int id radioButton1 0x7f0c0051
-int id radioButton2 0x7f0c0052
-int id radioButton3 0x7f0c0053
-int id radioButton4 0x7f0c0054
-int id radioButton5 0x7f0c0055
+int id radioButton1 0x7f0c0052
+int id radioButton2 0x7f0c0053
+int id radioButton3 0x7f0c0054
+int id radioButton4 0x7f0c0055
+int id radioButton5 0x7f0c0056
 int id screen 0x7f0c001f
 int id scrollView 0x7f0c0032
 int id search_badge 0x7f0c0044

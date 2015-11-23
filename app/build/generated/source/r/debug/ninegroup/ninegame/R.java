@@ -1516,6 +1516,7 @@ containing a value of this type.
         public static final int pergunta_passada=0x7f020040;
     }
     public static final class id {
+        public static final int RadioGroup=0x7f0c0051;
         public static final int action_bar=0x7f0c0040;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c003f;
@@ -1534,7 +1535,7 @@ containing a value of this type.
         public static final int always=0x7f0c0016;
         public static final int beginning=0x7f0c0013;
         public static final int buttonPanel=0x7f0c0036;
-        public static final int buttonResponder=0x7f0c0056;
+        public static final int buttonResponder=0x7f0c0057;
         public static final int checkbox=0x7f0c0038;
         public static final int collapseActionView=0x7f0c0017;
         public static final int contentPanel=0x7f0c0031;
@@ -1567,11 +1568,11 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0c0006;
         public static final int question=0x7f0c0050;
         public static final int radio=0x7f0c003a;
-        public static final int radioButton1=0x7f0c0051;
-        public static final int radioButton2=0x7f0c0052;
-        public static final int radioButton3=0x7f0c0053;
-        public static final int radioButton4=0x7f0c0054;
-        public static final int radioButton5=0x7f0c0055;
+        public static final int radioButton1=0x7f0c0052;
+        public static final int radioButton2=0x7f0c0053;
+        public static final int radioButton3=0x7f0c0054;
+        public static final int radioButton4=0x7f0c0055;
+        public static final int radioButton5=0x7f0c0056;
         public static final int screen=0x7f0c001f;
         public static final int scrollView=0x7f0c0032;
         public static final int search_badge=0x7f0c0044;

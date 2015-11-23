@@ -28,7 +28,8 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:id="@+id/RadioGroup">
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -91,4 +92,4 @@
 
 
 </RelativeLayout>
-<!-- From: file:/home/milagres/Documentos/Engenharia_de_Software/9group/app/src/main/res/layout/activity_question.xml -->
+<!-- From: file:/Users/guilherme/Documents/AndroidStudio/9group/9group/app/src/main/res/layout/activity_question.xml -->
