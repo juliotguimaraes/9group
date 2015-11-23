@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
+        jar="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/libs/internal_impl-22.1.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
-        <dex dex="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-69f954c99b3b8eea1bb8b94ad01105c79ab458cd.jar" />
+        <dex dex="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-c1f9e75a081871596453c27eb57004df6895db84.jar" />
     </item>
     <item
-        jar="/home/milagres/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
-        <dex dex="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-32cb84993020c063a7ee09e7e5e9038a50dfe84e.jar" />
-    </item>
-    <item
-        jar="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
-        <dex dex="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/pre-dexed/debug/classes-415809fa08792c60b68014ef33fb8804065824d4.jar" />
-    </item>
-    <item
-        jar="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
+        jar="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="/home/milagres/Documentos/Engenharia_de_Software/9group/app/build/intermediates/pre-dexed/debug/classes-e8815b885e3179890bf38f4e565140a0d190a2bb.jar" />
+        <dex dex="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/pre-dexed/debug/classes-9ba54b8bee89a566910ed1c92aa2220d8ef7f0e4.jar" />
+    </item>
+    <item
+        jar="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/pre-dexed/debug/classes-1c158af0e260d59ba7f22850bdd3f2b5984cf1e6.jar" />
+    </item>
+    <item
+        jar="/Users/guilherme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/Users/guilherme/Documents/AndroidStudio/9group/9group/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-89120f302cf578461d9ba957dd265e12a7cd6c46.jar" />
     </item>
 
 </items>
