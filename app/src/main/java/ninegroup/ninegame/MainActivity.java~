@@ -153,7 +153,6 @@ class CasaView extends ImageView {
             return true;
         }
         return false;
-
     }
 
     public void trocarImagem(int imageId) {
