@@ -30,6 +30,14 @@
                 android:value="ninegroup.ninegame.MainActivity" />
         </activity>
         <activity
+            android:name=".RegrasActivity"
+            android:label="@string/title_activity_regras"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ninegroup.ninegame.MainActivity" />
+        </activity>
+        <activity
             android:name=".RankingActivity"
             android:label="@string/title_activity_ranking"
             android:parentActivityName=".MainActivity" >

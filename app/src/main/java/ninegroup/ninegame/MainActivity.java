@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
         //posicionarLogo();
         posicionarCreditos();
         posicionarRanking();
+        posicionarRegras();
         montarTabuleiro(size.x, size.y);
     }
 
@@ -76,11 +77,11 @@ public class MainActivity extends Activity {
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int largura_tela = display.widthPixels;
 
-        float proporcao_tela = 0.5f;
+        float proporcao_tela = 0.3f;
         int largura = (int)(largura_tela * proporcao_tela * 0.9f);
-        int altura = (int) (largura_tela * 0.3f);
+        int altura = (int) (largura_tela * 0.3980f);
 
-        credito.setX(15);
+        credito.setX(largura_tela - largura - 50);
         credito.setY(0);
 
         LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
@@ -97,11 +98,11 @@ public class MainActivity extends Activity {
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         int largura_tela = display.widthPixels;
 
-        float proporcao_tela = 0.5f;
+        float proporcao_tela = 0.3f;
         int largura = (int)(largura_tela * proporcao_tela * 0.9f);
-        int altura = (int) (largura_tela * 0.3f);
+        int altura = (int) (largura_tela * 0.3980f);
 
-        credito.setX(largura_tela - largura - 15);
+        credito.setX(50);
         credito.setY(0);
 
         LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
@@ -109,6 +110,27 @@ public class MainActivity extends Activity {
 
         credito.setImageResource(R.drawable.ranking);
         rl.addView(credito);
+    }
+
+    private void posicionarRegras() {
+        RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
+        ImageView regra = new RegrasView(this);
+
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int largura_tela = display.widthPixels;
+
+        float proporcao_tela = 0.3f;
+        int largura = (int)(largura_tela * proporcao_tela * 0.9f);
+        int altura = (int) (largura_tela * 0.3980f);
+
+        regra.setX((largura_tela - largura)/2);
+        regra.setY(0);
+
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
+        regra.setLayoutParams(parms);
+
+        regra.setImageResource(R.drawable.regras);
+        rl.addView(regra);
     }
 
     protected void montarTabuleiro(int width, int height){
@@ -217,6 +239,22 @@ class CreditosView extends ImageView {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), CreditosActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+    }
+}
+
+class RegrasView extends ImageView {
+
+    public RegrasView(Context context) {
+        super(context);
+        this.setClickable(true);
+
+        this.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RegrasActivity.class);
                 v.getContext().startActivity(intent);
             }
         });

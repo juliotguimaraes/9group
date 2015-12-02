@@ -1516,6 +1516,7 @@ containing a value of this type.
         public static final int pergunta_futura=0x7f020040;
         public static final int pergunta_passada=0x7f020041;
         public static final int ranking=0x7f020042;
+        public static final int regras=0x7f020043;
     }
     public static final class id {
         public static final int RadioGroup=0x7f0c0052;
@@ -1577,6 +1578,7 @@ containing a value of this type.
         public static final int radioButton4=0x7f0c0056;
         public static final int radioButton5=0x7f0c0057;
         public static final int ranking_text=0x7f0c0059;
+        public static final int regras_text=0x7f0c005a;
         public static final int screen=0x7f0c001f;
         public static final int scrollView=0x7f0c0032;
         public static final int search_badge=0x7f0c0044;
@@ -1644,10 +1646,11 @@ containing a value of this type.
         public static final int activity_main=0x7f04001a;
         public static final int activity_question=0x7f04001b;
         public static final int activity_ranking=0x7f04001c;
-        public static final int select_dialog_item_material=0x7f04001d;
-        public static final int select_dialog_multichoice_material=0x7f04001e;
-        public static final int select_dialog_singlechoice_material=0x7f04001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f040020;
+        public static final int activity_regras=0x7f04001d;
+        public static final int select_dialog_item_material=0x7f04001e;
+        public static final int select_dialog_multichoice_material=0x7f04001f;
+        public static final int select_dialog_singlechoice_material=0x7f040020;
+        public static final int support_simple_spinner_dropdown_item=0x7f040021;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1673,9 +1676,11 @@ containing a value of this type.
         public static final int app_name=0x7f060011;
         public static final int arquivo_ranking=0x7f060012;
         public static final int creditos_text=0x7f060013;
-        public static final int title_activity_creditos=0x7f060014;
-        public static final int title_activity_question=0x7f060015;
-        public static final int title_activity_ranking=0x7f060016;
+        public static final int regras_text=0x7f060014;
+        public static final int title_activity_creditos=0x7f060015;
+        public static final int title_activity_question=0x7f060016;
+        public static final int title_activity_ranking=0x7f060017;
+        public static final int title_activity_regras=0x7f060018;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08006b;

@@ -4,6 +4,7 @@
     <string name="title_activity_question">Question</string>
     <string name="title_activity_creditos">Creditos</string>
     <string name="title_activity_ranking">Ranking</string>
+    <string name="title_activity_regras">Regras</string>
 
     <string name="creditos_text">Jogo 9Game - Engenharia de Software\n
     Criado por:\n
@@ -16,6 +17,9 @@
     Leandro Noman\n
     Marina Oliveira\n
     Rafael Almeida</string>
+
+    <string name="regras_text">Regras do Jogo\n
+        Testando...</string>
 
     <string name="arquivo_ranking">ranking.txt</string>
 </resources>
