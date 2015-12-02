@@ -18,8 +18,23 @@
     Marina Oliveira\n
     Rafael Almeida</string>
 
-    <string name="regras_text">Regras do Jogo\n
-        Testando...</string>
+    <string name="regras_text">Regras do Jogo\n\n
+
+    O jogo é baseado em perguntas e respostas a respeito de tópicos em Engenharia de Software. Cada pergunta terá quatro opções e apenas uma será considerada correta.\n\n
+
+    Inicialmente o jogador, ao entrar no jogo, deverá clicar no primeiro quadrado para receber uma pergunta. A partir desse momento, um cronômetro será iniciado, contabilizando o tempo gasto para responder cada pergunta.\n\n
+
+    Se o jogador acertar, ele poderá abrir a pergunta da próxima casa, através de um clique na respectiva casa. Em caso de erro, o jogador permanecerá na mesma posição no tabuleiro. \n\n
+
+    No momento em que o jogador está apenas na tela do tabuleiro, ou seja, ainda não clicou para receber a pergunta, o cronômetro ficará parado e o tempo não será contabilizado.\n\n
+
+    Objetivo do jogo consiste em responder as perguntas de forma correta o mais rápido possível.\n\n
+
+    A cada erro ou desistência da pergunta acarretará em uma penalidade, o cronômetro será acrescido de 5 segundos.\n\n
+
+    No meio do tabuleiro há uma pergunta de ética. Essa pergunta mudará a trajetória do jogador através do tabuleiro, dependendo do acerto ou erro da resposta dada.\n\n
+
+    Ao final do jogo, o tempo total será contabilizado e inserido em um ranking de pontuação. Os jogadores com menor tempo serão os líderes do ranking.</string>
 
     <string name="arquivo_ranking">ranking.txt</string>
 </resources>
