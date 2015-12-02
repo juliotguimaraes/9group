@@ -1516,7 +1516,7 @@ containing a value of this type.
         public static final int pergunta_passada=0x7f020040;
     }
     public static final class id {
-        public static final int RadioGroup=0x7f0c0051;
+        public static final int RadioGroup=0x7f0c0054;
         public static final int action_bar=0x7f0c0040;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c003f;
@@ -1535,7 +1535,7 @@ containing a value of this type.
         public static final int always=0x7f0c0016;
         public static final int beginning=0x7f0c0013;
         public static final int buttonPanel=0x7f0c0036;
-        public static final int buttonResponder=0x7f0c0057;
+        public static final int buttonResponder=0x7f0c0052;
         public static final int checkbox=0x7f0c0038;
         public static final int collapseActionView=0x7f0c0017;
         public static final int contentPanel=0x7f0c0031;
@@ -1560,19 +1560,21 @@ containing a value of this type.
         public static final int meuLayout=0x7f0c004f;
         public static final int middle=0x7f0c0015;
         public static final int multiply=0x7f0c001e;
+        public static final int myPhaseScreenLayout=0x7f0c0050;
         public static final int never=0x7f0c0019;
         public static final int none=0x7f0c000e;
         public static final int normal=0x7f0c000a;
         public static final int parentPanel=0x7f0c002d;
+        public static final int phase=0x7f0c0051;
         public static final int progress_circular=0x7f0c0005;
         public static final int progress_horizontal=0x7f0c0006;
-        public static final int question=0x7f0c0050;
+        public static final int question=0x7f0c0053;
         public static final int radio=0x7f0c003a;
-        public static final int radioButton1=0x7f0c0052;
-        public static final int radioButton2=0x7f0c0053;
-        public static final int radioButton3=0x7f0c0054;
-        public static final int radioButton4=0x7f0c0055;
-        public static final int radioButton5=0x7f0c0056;
+        public static final int radioButton1=0x7f0c0055;
+        public static final int radioButton2=0x7f0c0056;
+        public static final int radioButton3=0x7f0c0057;
+        public static final int radioButton4=0x7f0c0058;
+        public static final int radioButton5=0x7f0c0059;
         public static final int screen=0x7f0c001f;
         public static final int scrollView=0x7f0c0032;
         public static final int search_badge=0x7f0c0044;
@@ -1637,11 +1639,12 @@ containing a value of this type.
         public static final int abc_select_dialog_material=0x7f040017;
         public static final int abc_simple_dropdown_hint=0x7f040018;
         public static final int activity_main=0x7f040019;
-        public static final int activity_question=0x7f04001a;
-        public static final int select_dialog_item_material=0x7f04001b;
-        public static final int select_dialog_multichoice_material=0x7f04001c;
-        public static final int select_dialog_singlechoice_material=0x7f04001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001e;
+        public static final int activity_phase_complete=0x7f04001a;
+        public static final int activity_question=0x7f04001b;
+        public static final int select_dialog_item_material=0x7f04001c;
+        public static final int select_dialog_multichoice_material=0x7f04001d;
+        public static final int select_dialog_singlechoice_material=0x7f04001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001f;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
