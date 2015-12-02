@@ -1,7 +1,9 @@
 package ninegroup.ninegame;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
 import android.media.Image;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -26,7 +29,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindowManager().getDefaultDisplay().getSize(size);
-        posicionarLogo();
+        //posicionarLogo();
+        posicionarCreditos();
+        posicionarRanking();
         montarTabuleiro(size.x, size.y);
     }
 
@@ -62,6 +67,48 @@ public class MainActivity extends Activity {
 
         logo.setImageResource(R.drawable.logo);
         rl.addView(logo);
+    }
+
+    private void posicionarCreditos() {
+        RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
+        ImageView credito = new CreditosView(this);
+
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int largura_tela = display.widthPixels;
+
+        float proporcao_tela = 0.5f;
+        int largura = (int)(largura_tela * proporcao_tela * 0.9f);
+        int altura = (int) (largura_tela * 0.3f);
+
+        credito.setX(15);
+        credito.setY(0);
+
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
+        credito.setLayoutParams(parms);
+
+        credito.setImageResource(R.drawable.creditos);
+        rl.addView(credito);
+    }
+
+    private void posicionarRanking() {
+        RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
+        ImageView credito = new RankingView(this);
+
+        DisplayMetrics display = this.getResources().getDisplayMetrics();
+        int largura_tela = display.widthPixels;
+
+        float proporcao_tela = 0.5f;
+        int largura = (int)(largura_tela * proporcao_tela * 0.9f);
+        int altura = (int) (largura_tela * 0.3f);
+
+        credito.setX(largura_tela - largura - 15);
+        credito.setY(0);
+
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
+        credito.setLayoutParams(parms);
+
+        credito.setImageResource(R.drawable.ranking);
+        rl.addView(credito);
     }
 
     protected void montarTabuleiro(int width, int height){
@@ -134,12 +181,12 @@ class CasaView extends ImageView {
         this.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!verificaCasa()) {
+                if (!verificaCasa()) {
                     return;
                 }
                 Intent intent = new Intent(v.getContext(), QuestionActivity.class);
                 //v.getContext().startActivity(intent);
-                ((Activity)v.getContext()).startActivityForResult(intent, getID());
+                ((Activity) v.getContext()).startActivityForResult(intent, getID());
             }
         });
     }
@@ -157,5 +204,60 @@ class CasaView extends ImageView {
 
     public void trocarImagem(int imageId) {
         this.setImageResource(imageId);
+    }
+}
+
+class CreditosView extends ImageView {
+
+    public CreditosView(Context context) {
+        super(context);
+        this.setClickable(true);
+
+        this.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CreditosActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+    }
+}
+
+class RankingView extends ImageView {
+
+    public RankingView(final Context context) {
+        super(context);
+        this.setClickable(true);
+
+        this.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RankingActivity.class);
+                v.getContext().startActivity(intent);
+                //CODIGO DE PEGAR O NOME DO USUARIO QUANDO TERMINAR O JOGO
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Entre com seu nome");
+
+                // Set up the input
+                final EditText input = new EditText(context);
+                builder.setView(input);
+
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //m_Text = input.getText().toString();
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();*/
+            }
+        });
     }
 }

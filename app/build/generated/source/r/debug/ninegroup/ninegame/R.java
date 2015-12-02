@@ -1509,13 +1509,16 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
         public static final int backrepeat=0x7f02003b;
-        public static final int logo=0x7f02003c;
-        public static final int padrao=0x7f02003d;
-        public static final int pergunta_atual=0x7f02003e;
-        public static final int pergunta_futura=0x7f02003f;
-        public static final int pergunta_passada=0x7f020040;
+        public static final int creditos=0x7f02003c;
+        public static final int logo=0x7f02003d;
+        public static final int padrao=0x7f02003e;
+        public static final int pergunta_atual=0x7f02003f;
+        public static final int pergunta_futura=0x7f020040;
+        public static final int pergunta_passada=0x7f020041;
+        public static final int ranking=0x7f020042;
     }
     public static final class id {
+        public static final int RadioGroup=0x7f0c0052;
         public static final int action_bar=0x7f0c0040;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c003f;
@@ -1534,10 +1537,11 @@ containing a value of this type.
         public static final int always=0x7f0c0016;
         public static final int beginning=0x7f0c0013;
         public static final int buttonPanel=0x7f0c0036;
-        public static final int buttonResponder=0x7f0c0056;
+        public static final int buttonResponder=0x7f0c0058;
         public static final int checkbox=0x7f0c0038;
         public static final int collapseActionView=0x7f0c0017;
         public static final int contentPanel=0x7f0c0031;
+        public static final int creditos_text=0x7f0c004f;
         public static final int custom=0x7f0c0035;
         public static final int customPanel=0x7f0c0034;
         public static final int decor_content_parent=0x7f0c003e;
@@ -1556,7 +1560,7 @@ containing a value of this type.
         public static final int image=0x7f0c0028;
         public static final int listMode=0x7f0c0009;
         public static final int list_item=0x7f0c002a;
-        public static final int meuLayout=0x7f0c004f;
+        public static final int meuLayout=0x7f0c0050;
         public static final int middle=0x7f0c0015;
         public static final int multiply=0x7f0c001e;
         public static final int never=0x7f0c0019;
@@ -1565,13 +1569,14 @@ containing a value of this type.
         public static final int parentPanel=0x7f0c002d;
         public static final int progress_circular=0x7f0c0005;
         public static final int progress_horizontal=0x7f0c0006;
-        public static final int question=0x7f0c0050;
+        public static final int question=0x7f0c0051;
         public static final int radio=0x7f0c003a;
-        public static final int radioButton1=0x7f0c0051;
-        public static final int radioButton2=0x7f0c0052;
-        public static final int radioButton3=0x7f0c0053;
-        public static final int radioButton4=0x7f0c0054;
-        public static final int radioButton5=0x7f0c0055;
+        public static final int radioButton1=0x7f0c0053;
+        public static final int radioButton2=0x7f0c0054;
+        public static final int radioButton3=0x7f0c0055;
+        public static final int radioButton4=0x7f0c0056;
+        public static final int radioButton5=0x7f0c0057;
+        public static final int ranking_text=0x7f0c0059;
         public static final int screen=0x7f0c001f;
         public static final int scrollView=0x7f0c0032;
         public static final int search_badge=0x7f0c0044;
@@ -1635,12 +1640,14 @@ containing a value of this type.
         public static final int abc_search_view=0x7f040016;
         public static final int abc_select_dialog_material=0x7f040017;
         public static final int abc_simple_dropdown_hint=0x7f040018;
-        public static final int activity_main=0x7f040019;
-        public static final int activity_question=0x7f04001a;
-        public static final int select_dialog_item_material=0x7f04001b;
-        public static final int select_dialog_multichoice_material=0x7f04001c;
-        public static final int select_dialog_singlechoice_material=0x7f04001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001e;
+        public static final int activity_creditos=0x7f040019;
+        public static final int activity_main=0x7f04001a;
+        public static final int activity_question=0x7f04001b;
+        public static final int activity_ranking=0x7f04001c;
+        public static final int select_dialog_item_material=0x7f04001d;
+        public static final int select_dialog_multichoice_material=0x7f04001e;
+        public static final int select_dialog_singlechoice_material=0x7f04001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f040020;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1663,10 +1670,12 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f06000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f06000c;
         public static final int abc_toolbar_collapse_description=0x7f060010;
-        public static final int action_settings=0x7f060011;
-        public static final int app_name=0x7f060012;
-        public static final int hello_world=0x7f060013;
-        public static final int title_activity_question=0x7f060014;
+        public static final int app_name=0x7f060011;
+        public static final int arquivo_ranking=0x7f060012;
+        public static final int creditos_text=0x7f060013;
+        public static final int title_activity_creditos=0x7f060014;
+        public static final int title_activity_question=0x7f060015;
+        public static final int title_activity_ranking=0x7f060016;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08006b;
