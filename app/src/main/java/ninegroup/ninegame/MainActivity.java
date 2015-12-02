@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends Activity {
 
+    static boolean etico = true;
     static int casaAtual = 0;
     static boolean[] casasPassadas = new boolean[14];
     private CasaView[] casasView = new CasaView[14];
@@ -38,13 +39,26 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == Activity.RESULT_OK) {
+        if(resultCode==0 && (MainActivity.casaAtual == 9 || MainActivity.casaAtual == 11)){
+            // o jogador completou a fase
+            System.out.println("Voce ganhou a fase!!!!!!!");
+        }
+        if(resultCode==0 && etico) {
             casasPassadas[requestCode] = true;
-            casaAtual++;
             casasView[requestCode].trocarImagem(R.drawable.pergunta_passada);
-            if(requestCode + 1 < casasView.length) {
+            if (requestCode + 1 < casasView.length) {
                 casasView[requestCode + 1].trocarImagem(R.drawable.pergunta_atual);
             }
+        } else if(resultCode==1 && !etico) {
+            if(casaAtual == 13){
+                casasPassadas[6] = true;
+                casasView[6].trocarImagem(R.drawable.pergunta_passada);
+                casasView[13].trocarImagem(R.drawable.pergunta_atual);
+            }
+        } else if (resultCode == 0 && !etico){
+            casasPassadas[requestCode] = true;
+            casasView[requestCode].trocarImagem(R.drawable.pergunta_passada);
+            casasView[requestCode - 1].trocarImagem(R.drawable.pergunta_atual);
         }
     }
 
@@ -187,11 +201,11 @@ class CasaView extends ImageView {
         this.setX(posicaoX);
         this.setY(posicaoY);
         this.setClickable(true);
-        if(id != 0) {
-            this.setImageResource(R.drawable.pergunta_futura);
-        }
-        else {
+
+        if (id == MainActivity.casaAtual) {
             this.setImageResource(R.drawable.pergunta_atual);
+        } else {
+            this.setImageResource(R.drawable.pergunta_futura);
         }
         this.id = id;
 
@@ -218,10 +232,7 @@ class CasaView extends ImageView {
     }
 
     private boolean verificaCasa() {
-        if(id == MainActivity.casaAtual) {
-            return true;
-        }
-        return false;
+        return id == MainActivity.casaAtual;
     }
 
     public void trocarImagem(int imageId) {

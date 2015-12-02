@@ -26,4 +26,7 @@ public class Model {
         currentPosition = 0;
     }
 
+    public void setCurrentPosition(int currentPosition) {
+        this.currentPosition = currentPosition;
+    }
 }

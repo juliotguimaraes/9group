@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class QuestionActivity extends Activity {
+    Question currentDisplayedQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,45 +19,130 @@ public class QuestionActivity extends Activity {
 
         setContentView(R.layout.activity_question);
 
-        TextView question = (TextView)findViewById(R.id.question);
-        String questionString = "[POSCOMP 2010] A Engenharia de Requisitos \u00e9 um processo que envolve todas as atividades exigidas para criar e manter o documento de requisitos de sistema. Sobre a Engenharia de Requisitos, considere as afirmativas a seguir.";
-        questionString += "\n";
-        questionString += "I. A Engenharia de Requisitos, como todas as outras atividades de Engenharia de Software, precisa ser adaptada \u00e0s necessidades do processo, do projeto, do produto e do pessoal que est\u00e1 fazendo o trabalho.";
-        questionString += "\n";
-        questionString += "II. No est\u00e1gio de levantamento e an\u00e1lise dos requisitos, os membros da equipe t\u00e9cnica de desenvolvimento do software trabalham com o cliente e os usu\u00e1rios finais do sistema para descobrir mais informa\u00e7\u00f5es sobre o dom\u00ednio da aplica\u00e7\u00e3o, que servi\u00e7os o sistema deve oferecer, o desempenho exigido do sistema, as restri\u00e7\u00f5es de hardware, entre outras informa\u00e7\u00f5es.";
-        questionString += "\n";
-        questionString += "III. Na medida em que a informa\u00e7\u00e3o de v\u00e1rios pontos de vista \u00e9 coletada, os requisitos emergentes s\u00e3o consistentes.";
-        questionString += "\n";
-        questionString += "A valida\u00e7\u00e3o de requisitos se ocupa de mostrar que estes realmente definem o sistema que o cliente deseja. Ela \u00e9 importante porque a ocorr\u00eancia de erros em um documento de requisitos pode levar a grandes custos relacionados ao retrabalho.";
-        question.setText(Html.fromHtml(questionString));
-
-        RadioButton rb = (RadioButton)findViewById(R.id.radioButton1);
-        rb.setText(Html.fromHtml("a) Somente as afirmativas I e II s\u00e3o corretas."));
-        System.out.println(Html.fromHtml("a) Somente as afirmativas I e II s\u00e3o \u00e9 e \u00e9 corretas."));
-        rb = (RadioButton) findViewById(R.id.radioButton2);
-        rb.setText(Html.fromHtml("b) Somente as afirmativas I e III s\u00e3o corretas."));
-        rb = (RadioButton) findViewById(R.id.radioButton3);
-        rb.setText(Html.fromHtml("c) Somente as afirmativas III e IV s\u00e3o corretas."));
-        rb = (RadioButton) findViewById(R.id.radioButton4);
-        rb.setText(Html.fromHtml("d) Somente as afirmativas I, II e IV s\u00e3o corretas."));
-        rb = (RadioButton) findViewById(R.id.radioButton5);
-        rb.setText(Html.fromHtml("e) Somente as afirmativas II, III e IV s\u00e3o corretas."));
 
         Button button = (Button)findViewById(R.id.buttonResponder);
+
+        QuestionsHandler ql = new QuestionsHandler();
+
+        switch (MainActivity.casaAtual){
+            case 0:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(1);
+                break;
+            case 1:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(1);
+                break;
+            case 2:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(2);
+                break;
+            case 3:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(2);
+                break;
+            case 4:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(3);
+                break;
+            case 5:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(3);
+                break;
+            case 6:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(3);
+                break;
+            case 7:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(4);
+                break;
+            case 8:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(4);
+                break;
+            case 9:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(5);
+                break;
+            case 10:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(5);
+                break;
+            case 11:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(5);
+                break;
+            case 12:
+                currentDisplayedQuestion = ql.getRandomQuestionFromChangeLevel(4);
+                break;
+            case 13:
+                currentDisplayedQuestion = ql.getRandomQuestionFromSpecificNormalLevel(4);
+                break;
+        }
+        buildQuestionScreen(currentDisplayedQuestion);
+
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RadioGroup rg = (RadioGroup)findViewById(R.id.RadioGroup);
-                if(rg.getCheckedRadioButtonId() == R.id.radioButton4) {
-                    setResult(Activity.RESULT_OK);
-                }
-                else {
-                    setResult(Activity.RESULT_CANCELED);
+                if (didThePlayerAnswerTheQuestionCorrectly(currentDisplayedQuestion) == true){
+                    // resposta correta
+                    if(MainActivity.casaAtual == 6){
+                        MainActivity.etico = true;
+                        MainActivity.casaAtual++;
+                    } else if(MainActivity.etico){
+                        MainActivity.casaAtual++;
+                    } else {
+                        MainActivity.casaAtual--;
+                    }
+                    setResult(0);
+                } else {
+                    // resposta errada
+                    if(MainActivity.casaAtual == 6){
+                        MainActivity.etico = false;
+                        MainActivity.casaAtual = 13;
+                    }
+                    setResult(1);
                 }
                 finish();
             }
         });
+    }
+
+
+    private void buildQuestionScreen(Question q){
+        TextView question = (TextView)findViewById(R.id.question);
+        question.setText(Html.fromHtml(q.getQuestion()));
+        RadioButton rb = (RadioButton)findViewById(R.id.radioButton1);
+        rb.setText(Html.fromHtml(q.getAlternativeA()));
+        rb = (RadioButton) findViewById(R.id.radioButton2);
+        rb.setText(Html.fromHtml(q.getAlternativeB()));
+        rb = (RadioButton) findViewById(R.id.radioButton3);
+        rb.setText(Html.fromHtml(q.getAlternativeC()));
+        rb = (RadioButton) findViewById(R.id.radioButton4);
+        rb.setText(Html.fromHtml(q.getAlternativeD()));
+        rb = (RadioButton) findViewById(R.id.radioButton5);
+        rb.setText(Html.fromHtml(q.getAlternativeE()));
+    }
+    public boolean didThePlayerAnswerTheQuestionCorrectly(Question q){
+        RadioGroup rg = (RadioGroup) findViewById(R.id.RadioGroup);
+
+        int radioButtonID = rg.getCheckedRadioButtonId();
+        View radioButton = rg.findViewById(radioButtonID);
+        int idx = rg.indexOfChild(radioButton);
+
+        String checkedAnswer = "";
+        switch (idx){
+            case 0:
+                checkedAnswer = "A";
+                break;
+            case 1:
+                checkedAnswer = "B";
+                break;
+            case 2:
+                checkedAnswer = "C";
+                break;
+            case 3:
+                checkedAnswer = "D";
+                break;
+            case 4:
+                checkedAnswer = "E";
+                break;
+            default:
+                checkedAnswer = "Z";
+                break;
+        }
+        return q.isTheCorrectAnswer(checkedAnswer);
     }
 
 }
