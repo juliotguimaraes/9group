@@ -19,6 +19,6 @@ public class GameTimer {
         float tenRaisedToNine = (float) Math.pow(10,9);
         float startTimeInMilli = startNanoTime / tenRaisedToNine;
         float endTimeInMilli = System.nanoTime() / tenRaisedToNine;
-        return startNanoTime  - System.nanoTime();
+        return (System.nanoTime() - startNanoTime) / 1000000000f;
     }
 }

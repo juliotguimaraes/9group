@@ -37,6 +37,7 @@ public class RankingActivity extends Activity {
             line = br.readLine();
             while(line != null) {
                 tv.append(line);
+                tv.append("\n");
                 line = br.readLine();
             }
         } catch(FileNotFoundException ex) {}

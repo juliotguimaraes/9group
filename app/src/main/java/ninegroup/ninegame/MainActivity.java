@@ -16,9 +16,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class MainActivity extends Activity {
 
+    static GameScores score = new GameScores();
     static boolean etico = true;
     static int casaAtual = 0;
     static boolean[] casasPassadas = new boolean[14];
@@ -30,7 +36,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindowManager().getDefaultDisplay().getSize(size);
-        //posicionarLogo();
         posicionarCreditos();
         posicionarRanking();
         posicionarRegras();
@@ -39,9 +44,9 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode==0 && (MainActivity.casaAtual == 9 || MainActivity.casaAtual == 11)){
+        if(resultCode==0 && (MainActivity.casaAtual == 10)){
             // o jogador completou a fase
-            System.out.println("Voce ganhou a fase!!!!!!!");
+            escreveRanking();
         }
         if(resultCode==0 && etico) {
             casasPassadas[requestCode] = true;
@@ -62,26 +67,44 @@ public class MainActivity extends Activity {
         }
     }
 
-    protected void posicionarLogo(){
-        RelativeLayout rl = (RelativeLayout)findViewById(R.id.meuLayout);
-        ImageView logo = new ImageView(this);
+    private void escreveRanking() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Entre com seu nome");
 
-        DisplayMetrics display = this.getResources().getDisplayMetrics();
-        int largura_tela = display.widthPixels;
+        // Set up the input
+        final EditText input = new EditText(this);
+        builder.setView(input);
 
-        float proporcao_tela = 0.5f;
-        int largura = (int)(largura_tela * proporcao_tela);
-        int altura = (int) (largura_tela * 0.4345f);
+        // Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //m_Text = input.getText().toString();
+                File file = new File(getFilesDir(), getString(R.string.arquivo_ranking));
+                BufferedWriter bw;
 
-        int esquerda = (largura_tela - largura) / 2;
-        logo.setX(esquerda);
-        logo.setY(0);
+                try {
+                    bw = new BufferedWriter(new FileWriter(file, true));
 
-        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(largura, altura);
-        logo.setLayoutParams(parms);
+                    if(!file.exists()) {
+                        file.createNewFile();
+                    }
 
-        logo.setImageResource(R.drawable.logo);
-        rl.addView(logo);
+                    if(etico) {
+                        bw.write(input.getText().toString() + " " + score.calculateEthicFinalScore() + '\n');
+                    }
+                    else {
+                        bw.write(input.getText().toString() + " " + score.calculateNonEthicFinalScore() + '\n');
+                    }
+
+                    bw.close();
+                } catch(IOException ex) {
+                    return;
+                }
+            }
+        });
+
+        builder.show();
     }
 
     private void posicionarCreditos() {
